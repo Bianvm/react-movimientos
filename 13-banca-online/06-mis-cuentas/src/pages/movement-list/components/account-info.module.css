@@ -1,0 +1,14 @@
+.root {
+    display: flex;   
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.alias {
+    flex: 1;
+}
+
+.iban {
+    text-align: end;
+}

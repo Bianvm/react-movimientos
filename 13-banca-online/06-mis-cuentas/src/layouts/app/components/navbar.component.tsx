@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { generatePath, Link } from "react-router-dom";
 import { appRoutes, routesPrefixes } from "@/core/router";
 import classes from "./navbar.component.module.css";
 import { useLocation } from "react-router-dom";
@@ -18,6 +18,21 @@ export const NavbarComponent: React.FC = () => {
           }
         >
           <Link to={appRoutes.accountList}>Mis Cuentas</Link>
+        </li>
+        <li
+          className={
+            pathname.startsWith(routesPrefixes.movements)
+              ? classes.selected
+              : ""
+          }
+        >
+          <Link
+            to={generatePath(appRoutes.movements, {
+              id: 1,
+            })}
+          >
+            Movimientos
+          </Link>
         </li>
         <li
           className={
